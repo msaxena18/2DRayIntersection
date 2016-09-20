@@ -1,4 +1,4 @@
-public class 2DRayIntersection {
+public class TwoDimensionRayIntersection {
 	/* Models the intersection of two 2D Rays. */
 
 	/* Two devices, deviceA and deviceB, and their intersection point, intersectPostion. */
@@ -7,21 +7,21 @@ public class 2DRayIntersection {
 	private Position intersectPosition;
 
 	/* Constructor that initializes deviceA, deviceB, intersectPosition. */
-	public 2DRayIntersection(MeasurementDevice deviceOne, MeasurementDevice deviceTwo) {
+	public TwoDimensionRayIntersection(MeasurementDevice deviceOne, MeasurementDevice deviceTwo) {
 		deviceA = deviceOne;
 		deviceB = deviceTwo;
 		intersectPosition = new Position(0,0);
 	}
 
 	/* Sets intersectPosition to the intersect point of deviceA and deviceB. */
-	public void set2DRayIntersection() {
+	public void setTwoDimensionRayIntersection() {
 		double angleA = deviceA.getOffsetAngle();
 		double angleB = deviceB.getOffsetAngle();
 		double yCoordinateA = deviceA.getDevicePosition().getYCoordinate();
-		double xCoordinateA = deviceA.getDevicePosition.getXCoordinate();
+		double xCoordinateA = deviceA.getDevicePosition().getXCoordinate();
 
 		double yCoordinateB = deviceB.getDevicePosition().getYCoordinate();
-		double xCoordinateB = deviceB.getDevicePosition.getXCoordinate();
+		double xCoordinateB = deviceB.getDevicePosition().getXCoordinate();
 
 		double tanThetaA = Math.sin(angleA)/Math.cos(angleA);
 		double tanThetaB = Math.sin(angleB)/Math.cos(angleB);
@@ -37,35 +37,35 @@ public class 2DRayIntersection {
 	}
 
 	/* Changes the offset angle for device and recalculates intersect position. */
-	public void changeAngleForDevice(Measurement device, double angle) {
+	public void changeAngleForDevice(MeasurementDevice device, double angle) {
 		device.changeOffsetAngle(angle);
-		set2DRayIntersection();
+		setTwoDimensionRayIntersection();
 	}
 
 	/* Increments the offset angle of device by angle and recalculates intersect position. */
-	public void incrementOffsetAngleOfDevice(Measurement device, double angle) {
+	public void incrementOffsetAngleOfDevice(MeasurementDevice device, double angle) {
 		device.incrementOffsetAngle(angle);
-		set2DRayIntersection();
+		setTwoDimensionRayIntersection();
 	}
 
 	/* Decrements the offset angle of device by angle and recalculates intersect position. */
-	public void decrementOffsetAngleOfDevice(Measurment device, double angle) {
-		device.decrementOffSetAngle(angle);
-		set2DRayIntersection();
+	public void decrementOffsetAngleOfDevice(MeasurementDevice device, double angle) {
+		device.decrementOffsetAngle(angle);
+		setTwoDimensionRayIntersection();
 	}
 
 	/* Returns intersectionPosition for deviceA and deviceB. */
-	public Position get2DRayIntersection() {
+	public Position getTwoDimensionRayIntersection() {
 		return intersectPosition;
 	}
 
 	/* Returns X Coordinate of intersectionPoint. */
-	public double get2DRayIntersectionXCoordinate() {
+	public double getTwoDimensionRayIntersectionXCoordinate() {
 		return intersectPosition.getXCoordinate();
 	}
 
 	/* Returns Y Coordinate of intersectionPoint. */
-	public double get2DRayIntersectionYCoordinate() {
+	public double getTwoDimensionRayIntersectionYCoordinate() {
 		return intersectPosition.getYCoordinate();
 	}
 
