@@ -10,7 +10,7 @@ public Class MeasurementDevice {
 		samplingFrequency = frequency;
 	}
 
-	public double changeOffsetAngle(double angle) {
+	public void changeOffsetAngle(double angle) {
 		offsetAngle += angle;
 	}
 
