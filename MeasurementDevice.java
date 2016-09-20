@@ -19,6 +19,16 @@ public Class MeasurementDevice {
 		offsetAngle = angle;
 	}
 
+	/* Increments offsetAngle by angle. */
+	public void incrementOffsetAngle(double angle) {
+		offsetAngle += angle;
+	}
+
+	/* Decrements offsetAngle by angle. */
+	public void decrementOffsetAngle(double angle) {
+		offsetAngle -= angle;
+	}
+
 	/* Returns the position of the device, devicePosition. */
 	private Position getDevicePosition() {
 		return devicePosition;
