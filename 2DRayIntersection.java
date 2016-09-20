@@ -1,6 +1,6 @@
 
 public class 2DRayIntersection {
-	/* Returns the intersection of two 2D Rays */
+	/* Models the intersection of two 2D Rays. */
 
 	/* Two devices, deviceA and deviceB, and their intersection point, intersectPostion. */
 	private MeasurementDevice deviceA;
