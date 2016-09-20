@@ -1,4 +1,4 @@
-public Class MeasurementDevice {
+public class MeasurementDevice {
 	/* Models Measurement Device, which can detect objects at certain angle 
 		and at a certain sampling frequency. */
 	

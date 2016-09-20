@@ -1,4 +1,3 @@
-
 public class 2DRayIntersection {
 	/* Models the intersection of two 2D Rays. */
 
