@@ -1,21 +1,23 @@
 public class Position {
-	
-	/*Cartesian coordinate representation of position: (x, y)*/
+	/* Models position of a point in Cartesian coordinates. */
+
+	/* Cartesian coordinate representation of position: (x, y). */
 	private double xCoordinate;
 	private double yCoordinate;
 
+	/* Initializes xCoordinate and yCoordinate. */
 	public Position(double xCoor, double yCoor) {
-		this.xCoordinate = xCoor;
-		this.yCoordinate = yCoordinate;
+		xCoordinate = xCoor;
+		yCoordinate = yCoor;
 	}
 
-	/* Returns X Coordinate */
+	/* Returns X Coordinate of Position. */
 	public double getXCoordinate() {
-		return this.xCoordinate;
+		return xCoordinate;
 	}
 
-	/* Returns Y Coordinate */
+	/* Returns Y Coordinate of Position. */
 	public double getYCoordinate() {
-		return this.theta;
+		return yCoordinate;
 	}
 }
