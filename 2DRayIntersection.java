@@ -78,7 +78,5 @@ public class 2DRayIntersection {
 	public MeasurementDevice getDeviceB() {
 		return deviceB;
 	}
-
-
 	
 }

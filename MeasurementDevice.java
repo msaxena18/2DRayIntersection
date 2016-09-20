@@ -30,17 +30,17 @@ public class MeasurementDevice {
 	}
 
 	/* Returns the position of the device, devicePosition. */
-	private Position getDevicePosition() {
+	public Position getDevicePosition() {
 		return devicePosition;
 	}
 
 	/* Returns the offset angle of the device, offsetAngle. */
-	private double getOffsetAngle() {
+	public double getOffsetAngle() {
 		return offsetAngle;
 	}
 
 	/* Returns the sampling frequency of the device, samplingFrequency. */
-	private double getSamplingFrequency() {
+	public double getSamplingFrequency() {
 		return samplingFrequency;
 	}
 }
