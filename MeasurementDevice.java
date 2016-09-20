@@ -10,6 +10,10 @@ public Class MeasurementDevice {
 		samplingFrequency = frequency;
 	}
 
+	public double changeOffsetAngle(double angle) {
+		offsetAngle += angle;
+	}
+
 	private Position getDevicePosition() {
 		return devicePosition;
 	}
