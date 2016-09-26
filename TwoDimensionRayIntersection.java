@@ -33,7 +33,43 @@ public class TwoDimensionRayIntersection {
 		double yCoordinateIntersect = xCoordinateIntersect*tanThetaA + interceptA;
 
 		Position intersection = new Position(xCoordinateIntersect, yCoordinateIntersect);
-		intersectPosition = intersection;
+		
+		if (!checkPositionIntersection(intersection, deviceA.getDevicePosition(), deviceB.getDevicePosition(),
+			tanThetaA, tanThetaB)) {
+			intersectionPosition = null;
+		} else {
+			intersectPosition = intersection;
+		}
+	}
+	/* Checks whether the intersection point for the rays are valid. If the intersection point for the rays doesn't fall between
+		these bounds, the rays would only intersect if they were lines.*/
+	public boolean checkPositionIntersection(Position intersection, Position originA, Position originB,
+		double slopeA, double slopeB) {
+
+		if (slopeA > 0 && slopeB < 0) {
+			boolean xCondition = intersection.getXCoordinate() > originA.getXCoordinate();
+			boolean yCondition = intersection.getYCoordinate() > originA.getYCoordinate();
+			return xCondition && yCondition
+		}
+
+		if (slopeA < 0 && slopeB > 0) {
+			boolean xCondition = intersection.getXCoordinate() > originB.getXCoordinate();
+			boolean yCondition = intersection.getYCoordinate() > originB.getYCoordinate();
+			return xCondition && yCondition;
+		}
+
+		if (slopeA > 0 && slopeB > 0) {
+			boolean rayACondition = intersection.getYCoordinate() > originA.getYCoordinate();
+			boolean rayBCondition = intersection.getYCoordinate() > originB.getYCoordinate();
+			return rayACondition && rayBCondition
+		}
+
+		if (slopeA < 0 && slopeB < 0) {
+			boolean rayACondition = intersection.getYCoordinate() < originA.getYCoordinate();
+			boolean rayBCondition = intersection.getYCoordinate() < originB.getYCoordinate();
+			return rayACondition && rayBCondition;
+		}
+
 	}
 
 	/* Changes the offset angle for device and recalculates intersect position. */
