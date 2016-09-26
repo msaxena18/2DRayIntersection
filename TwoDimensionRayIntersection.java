@@ -29,16 +29,20 @@ public class TwoDimensionRayIntersection {
 		double interceptA = yCoordinateA - (xCoordinateA*tanThetaA);
 		double interceptB = yCoordinateB - (xCoordinateB*tanThetaB);
 
-		double xCoordinateIntersect = (-interceptA + interceptB) / (tanThetaA - tanThetaB);
-		double yCoordinateIntersect = xCoordinateIntersect*tanThetaA + interceptA;
-
-		Position intersection = new Position(xCoordinateIntersect, yCoordinateIntersect);
+		if (tanThetaA != tanThetaB) {
+			double xCoordinateIntersect = (-interceptA + interceptB) / (tanThetaA - tanThetaB);
+			double yCoordinateIntersect = xCoordinateIntersect*tanThetaA + interceptA;
+			Position intersection = new Position(xCoordinateIntersect, yCoordinateIntersect);
 		
-		if (!checkPositionIntersection(intersection, deviceA.getDevicePosition(), deviceB.getDevicePosition(),
-			tanThetaA, tanThetaB)) {
-			intersectPosition = null;
+			if (!checkPositionIntersection(intersection, deviceA.getDevicePosition(), deviceB.getDevicePosition(),
+				tanThetaA, tanThetaB)) {
+				intersectPosition = null;
+			} else {
+				intersectPosition = intersection;
+			}
+				
 		} else {
-			intersectPosition = intersection;
+			intersectPosition = null;
 		}
 	}
 	/* Checks whether the intersection point for the rays are valid. If the intersection point for the rays doesn't fall between
