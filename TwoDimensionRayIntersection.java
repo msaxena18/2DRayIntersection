@@ -36,7 +36,7 @@ public class TwoDimensionRayIntersection {
 		
 		if (!checkPositionIntersection(intersection, deviceA.getDevicePosition(), deviceB.getDevicePosition(),
 			tanThetaA, tanThetaB)) {
-			intersectionPosition = null;
+			intersectPosition = null;
 		} else {
 			intersectPosition = intersection;
 		}
@@ -49,7 +49,7 @@ public class TwoDimensionRayIntersection {
 		if (slopeA > 0 && slopeB < 0) {
 			boolean xCondition = intersection.getXCoordinate() > originA.getXCoordinate();
 			boolean yCondition = intersection.getYCoordinate() > originA.getYCoordinate();
-			return xCondition && yCondition
+			return xCondition && yCondition;
 		}
 
 		if (slopeA < 0 && slopeB > 0) {
@@ -61,7 +61,7 @@ public class TwoDimensionRayIntersection {
 		if (slopeA > 0 && slopeB > 0) {
 			boolean rayACondition = intersection.getYCoordinate() > originA.getYCoordinate();
 			boolean rayBCondition = intersection.getYCoordinate() > originB.getYCoordinate();
-			return rayACondition && rayBCondition
+			return rayACondition && rayBCondition;
 		}
 
 		if (slopeA < 0 && slopeB < 0) {
@@ -69,6 +69,8 @@ public class TwoDimensionRayIntersection {
 			boolean rayBCondition = intersection.getYCoordinate() < originB.getYCoordinate();
 			return rayACondition && rayBCondition;
 		}
+
+		return false;
 
 	}
 
